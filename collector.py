@@ -8,7 +8,7 @@ headers = {
 }
 
 #for i in range(80,116):
-i = 101
+i = 102
 
 # Make a get request 
 response = requests.get("https://api.propublica.org/congress/v1/" + str(i) + "/senate/votes/party.json", headers = headers)
@@ -18,6 +18,5 @@ print(response.status_code)
 if (response.status_code == 200):
 	data = response.json()
 	with open('congress' + str(i) + '.json', 'w') as outfile:
-	    print(data[results])
 	    json.dump(data, outfile)
 
